@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content%}
+ <nav>
+  <ul>
+   <li><a href="{% url 'youths:youth' %}">Youth ministry</a></li>
+   <li><a href="{% url 'home' %}">Home</a></li>
+   <li><a href="{% url 'main:main' %}">Main Church</a></li>
+  </ul>
+ </nav>
+ 
+ <section class="children">
+  <h2>Children Ministry</h2>
+  <p>Our children ministry is dedicated to bringing up children in the ways of the Lord, so that they grow with Christ
+   and stay in Christ. We organise programs for the children. This helps bring the children together and also to display
+   their God given talents at an early age in life.</p>
+ </section>
+
+ <div id="members">
+  <h2 class="title">Choke Parish children</h2>
+  {% for child in children %}
+  <ul>
+   <li>
+    <span class="name">{{ child.name }}</span>
+   </li>
+  </ul>
+  {% endfor %}
+ </div>
+
+<div id="gallery">
+  <h2 class="title">Choke Parish Children Photo Gallery</h2>
+  <div class="container">
+    {% for child in children %}
+    <div>
+      <img src="{{ child.thumb.url }}" class="image" />
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

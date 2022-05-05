@@ -1,0 +1,40 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Church</title>
+ <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+ <div id="wrapper">
+  <header>
+   <div id="page-banner">
+    <h1>Choke Parish</h1>
+    <img src="{% static 'image.jpg' %}" alt="church_image">
+    <p>We breathe!!</p>
+   </div>
+  </header>
+
+  {% block content %}
+  {% endblock %}
+
+  <form class="salvation">
+   <h2>Salvation Form</h2>
+   <input type="text" placeholder="Your name..." required>
+   <input type="text" placeholder="Your number..." required>
+   <input type="email" placeholder="Your email...">
+   <textarea cols="30" rows="10" placeholder="Your prayer request..."></textarea>
+   <input type="checkbox"> I confess that I have received Jesus Christ as my Lord and personal Saviour
+   <a href="mailto: ubongeffiong5@gmail.com">send</a>
+  </form>
+
+  <footer>
+   <p>Copyright &copy;2021 Choke Parish</p>
+  </footer>
+ </div>
+</body>
+</html>

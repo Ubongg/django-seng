@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content%}
+<nav>
+ <ul>
+  <li><a href="{% url 'youths:youth' %}">Youth ministry</a></li>
+  <li><a href="{% url 'children:child' %}">Children ministry</a></li>
+  <li><a href="{% url 'home' %}">Home</a></li>
+ </ul>
+</nav>
+
+<div id="members">
+ <h2 class="title">Choke Parish Members</h2>
+ {% for main in mains %}
+ <ul>
+  <li>
+   <span class="name">{{ main.name }}</span>
+  </li>
+ </ul>
+ {% endfor %}
+</div>
+
+<div id="gallery">
+ <h2 class="title">Choke Parish Members Photo Gallery</h2>
+ <div class="container">
+  {% for main in mains %}
+  <div>
+   <img src="{{ main.thumb.url }}" class="image" />
+  </div>
+  {% endfor %}
+ </div>
+</div>
+{% endblock %}

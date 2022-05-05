@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content%}
+ <nav>
+  <ul>
+   <li><a href="{% url 'youths:youth' %}">Youth ministry</a></li>
+   <li><a href="{% url 'children:child' %}">Children ministry</a></li>
+   <li><a href="{% url 'main:main' %}">Main Church</a></li>
+  </ul>
+ </nav>
+ 
+ <section class="services">
+  <h2>Choke Parish Services</h2>
+  <ul>
+   <li>
+    <p><strong>Sundays:</strong> 9am - 10:30am</p>
+   </li>
+   <li>
+    <p><strong>Tuesdays:</strong> 6pm - 7pm</p>
+   </li>
+   <li>
+    <p><strong>Fridays:</strong> 6pm - 7pm</p>
+   </li>
+  </ul>
+ </section>
+ 
+ <section class="give">
+  <h2>Online Giving</h2>
+  <p>Make seamless payment of pledges, offerings, tithes and contributions to the church.</p>
+  <div class="account">
+   <p><strong>Direct Bank Transfers:</strong></p>
+   <p class="bank">Zenith Bank <br>2030546021</p>
+   <p class="bank">Access Bank <br>0056793451</p>
+  </div>
+ </section>
+ 
+ <div id="tabbed-content">
+  <ul class="tabs">
+   <li data-target="#about" class="active">About</li>
+   <li data-target="#contact">Contact</li>
+  </ul>
+  <div class="panel active" id="about">
+   <p>About us...</p>
+   <p>We bring people together in order to connect them with Christ.</p>
+  </div>
+  <div class="panel" id="contact">
+   <p>Contact us...</p>
+   <form action="">
+    <input type="text" name="name" id="name" placeholder="Your name..." required />
+    <!-- email -->
+    <input type="email" name="email" id="email" placeholder="Your email..." required />
+    <a href="mailto: ubongeffiong5@gmail.com">send</a>
+   </form>
+  </div>
+ </div>
+
+ <script src="/static/home.js"></script>
+{% endblock %}
